@@ -18,7 +18,7 @@
             </div>
             <div class="card-body">
                 <div class="container-fluid">
-                    <form id="login-user" method="POST" action="{% url 'scheduled-trips-page' %}">
+                    <form id="login-user" method="POST" action="{% url 'travelApp:scheduled-trips-page' %}">
                         {% csrf_token %}
                         <div class="mdc-layout-grid">
                             <div class="mdc-layout-grid__inner">

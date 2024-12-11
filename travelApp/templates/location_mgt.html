@@ -59,10 +59,10 @@
 <script>
     $(function() {
         $('#add_new').click(function() {
-            uni_modal('<i class="fa fa-plus"></i> Add Location', '{% url "manage-location" %}', 'modal-md')
+            uni_modal('<i class="fa fa-plus"></i> Add Location', '{% url "travelApp:manage-location" %}', 'modal-md')
         })
         $('.edit-data').click(function() {
-            uni_modal('<i class="fa fa-edit"></i> Edit Location', '{% url "manage-location" %}/' + $(this).attr('data-id'), 'modal-md')
+            uni_modal('<i class="fa fa-edit"></i> Edit Location', '{% url "travelApp:manage-location" %}/' + $(this).attr('data-id'), 'modal-md')
         })
         $('.delete-data').click(function() {
             _conf("Are you sure to delete this Location permanently?", "delete_location", [$(this).attr('data-id')])
@@ -90,7 +90,7 @@
         el.addClass("alert alert-danger err-msg")
         el.hide()
         $.ajax({
-            url: '{% url "delete-location" %}',
+            url: '{% url "travelApp:delete-location" %}',
             headers: {
                 'X-CSRFToken': "{{csrf_token}}"
             },

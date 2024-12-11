@@ -39,7 +39,7 @@
             }
             start_loader();
             $.ajax({
-                url: "{% url 'save-location' %}",
+                url: "{% url 'travelApp:save-location' %}",
                 data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,

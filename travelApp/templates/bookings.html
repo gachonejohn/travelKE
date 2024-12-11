@@ -49,7 +49,7 @@
                                 <span class="badge bg-success bg-gradient rounded-pill px-2">Paid</span> {% endif %}
                             </td>
                             <td class="px-2 py-1 align-middle text-center">
-                                <a class="btn btn-outline-primary btn-sm view-data" href="javascript:void(0)" data-url="{% url 'veiw-booking' booked.pk %}" title="View Booking">
+                                <a class="btn btn-outline-primary btn-sm view-data" href="javascript:void(0)" data-url="{% url 'travelApp:veiw-booking' booked.pk %}" title="View Booking">
                                     <i class="fa fa-eye"></i>
                                 </a>
                                 <button class="btn btn-outline-danger btn-sm delete-data" type="button" data-id="{{ booked.pk }}" title="Delete">
@@ -97,7 +97,7 @@
         el.addClass("alert alert-danger err-msg")
         el.hide()
         $.ajax({
-            url: '{% url "delete-booking" %}',
+            url: '{% url "travelApp:delete-booking" %}',
             headers: {
                 'X-CSRFToken': "{{csrf_token}}"
             },

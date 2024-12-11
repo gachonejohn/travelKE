@@ -17,7 +17,7 @@
             </div>
             <div class="card-body">
                 <div class="container-fluid">
-                    <form id="register-user" method="POST" action="{% url 'register-user' %}" enctype="multipart/form-data">
+                    <form id="register-user" method="POST" action="{% url 'travelApp:register-user' %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="mdc-layout-grid">
                             <div class="mdc-layout-grid__inner">

@@ -65,7 +65,7 @@
             }
             start_loader();
             $.ajax({
-                url: "{% url 'save-bus' %}",
+                url: "{% url 'travelApp:save-bus' %}",
                 data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,

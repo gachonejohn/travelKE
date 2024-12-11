@@ -93,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'travelApp_db',
         'USER':'root',
-        'PASSWORD':'', #Your MSQL password
+        'PASSWORD':'Forex#254', #Your MSQL password
         'HOST':'localhost',
         'PORT':'3306'
     }

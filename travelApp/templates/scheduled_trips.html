@@ -87,7 +87,7 @@
 <script>
     $(function() {
         $('.book-data').click(function() {
-            uni_modal("Booking Form", '{%  url "manage-booking" %}/' + $(this).attr('data-id'), 'mid-large')
+            uni_modal("Booking Form", '{%  url "travelApp:manage-booking" %}/' + $(this).attr('data-id'), 'mid-large')
         })
         $('#schedule-list').DataTable({
             columnDefs: [{

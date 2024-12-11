@@ -5,7 +5,7 @@ from . import views
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import RedirectView
 
-# app_name = "travelApp"
+app_name = "travelApp"
 urlpatterns = [
     path('redirect-admin', RedirectView.as_view(url="/admin"),name="redirect-admin"),
     path('login',auth_views.LoginView.as_view(template_name="login.html",redirect_authenticated_user = True),name='login'),

@@ -52,7 +52,7 @@
             }
             start_loader();
             $.ajax({
-                url: "{% url 'save-book' %}",
+                url: "{% url 'travelApp:save-book' %}",
                 data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,

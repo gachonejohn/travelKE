@@ -69,7 +69,7 @@
         el.addClass("alert alert-danger err-msg")
         el.hide()
         $.ajax({
-            url: '{% url "pay-booked" %}',
+            url: '{% url "travelApp:pay-booked" %}',
             headers: {
                 'X-CSRFToken': "{{csrf_token}}"
             },

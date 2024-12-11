@@ -43,7 +43,7 @@
             }
             start_loader();
             $.ajax({
-                url: "{% url 'save-category' %}",
+                url: "{% url 'travelApp:save-category' %}",
                 data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,

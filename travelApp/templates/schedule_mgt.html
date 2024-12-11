@@ -75,10 +75,10 @@
 <script>
     $(function() {
         $('#add_new').click(function() {
-            uni_modal('<i class="fa fa-plus"></i> Add Schedule', '{% url "manage-schedule" %}', 'modal-md')
+            uni_modal('<i class="fa fa-plus"></i> Add Schedule', '{% url "travelApp:manage-schedule" %}', 'modal-md')
         })
         $('.edit-data').click(function() {
-            uni_modal('<i class="fa fa-edit"></i> Edit Schedule', '{% url "manage-schedule" %}/' + $(this).attr('data-id'), 'modal-md')
+            uni_modal('<i class="fa fa-edit"></i> Edit Schedule', '{% url "travelApp:manage-schedule" %}/' + $(this).attr('data-id'), 'modal-md')
         })
         $('.delete-data').click(function() {
             _conf("Are you sure to delete this Schedule permanently?", "delete_schedule", [$(this).attr('data-id')])
@@ -106,7 +106,7 @@
         el.addClass("alert alert-danger err-msg")
         el.hide()
         $.ajax({
-            url: '{% url "delete-schedule" %}',
+            url: '{% url "travelApp:delete-schedule" %}',
             headers: {
                 'X-CSRFToken': "{{csrf_token}}"
             },

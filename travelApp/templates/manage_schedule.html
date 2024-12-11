@@ -100,7 +100,7 @@
             }
             start_loader();
             $.ajax({
-                url: "{% url 'save-schedule' %}",
+                url: "{% url 'travelApp:save-schedule' %}",
                 data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,

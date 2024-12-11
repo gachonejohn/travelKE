@@ -576,18 +576,18 @@ def find_trip(request):
 
 # M-PESA integration
 
-def token(request):
-    consumer_key = 'cqivoO91hSHBq2qZz4SBvfFbWOY2EeqJtoA47mZjh3gXKW6M'
-    consumer_secret = 'pZ7cVI3j0VMcSXqvbzapJvlEMpJmi6cB1T84wN0lDF18rIy38qCd8JqvNmdFab9Q'
-    api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
-
-    r = requests.get(api_URL, auth=HTTPBasicAuth(
-        consumer_key, consumer_secret))
-    mpesa_access_token = json.loads(r.text)
-    validated_mpesa_access_token = mpesa_access_token["access_token"]
-
-    return render(request, 'token.html', {"token":validated_mpesa_access_token})
-
+# def token(request):
+#     consumer_key = 'cqivoO91hSHBq2qZz4SBvfFbWOY2EeqJtoA47mZjh3gXKW6M'
+#     consumer_secret = 'pZ7cVI3j0VMcSXqvbzapJvlEMpJmi6cB1T84wN0lDF18rIy38qCd8JqvNmdFab9Q'
+#     api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
+#
+#     r = requests.get(api_URL, auth=HTTPBasicAuth(
+#         consumer_key, consumer_secret))
+#     mpesa_access_token = json.loads(r.text)
+#     validated_mpesa_access_token = mpesa_access_token["access_token"]
+#
+#     return render(request, 'token.html', {"token":validated_mpesa_access_token})
+#
 
 # def pay(request):
 #     if request.method =="POST":
@@ -616,14 +616,29 @@ def token(request):
 # def stk(request):
 #     return render(request, 'pay.html', {'navbar': 'stk'})
 
+def token(request):
+    consumer_key = 'cqivoO91hSHBq2qZz4SBvfFbWOY2EeqJtoA47mZjh3gXKW6M'
+    consumer_secret = 'pZ7cVI3j0VMcSXqvbzapJvlEMpJmi6cB1T84wN0lDF18rIy38qCd8JqvNmdFab9Q'
+    api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
+
+    r = requests.get(api_URL, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+    mpesa_access_token = json.loads(r.text)
+    validated_mpesa_access_token = mpesa_access_token["access_token"]
+
+    return render(request, 'token.html', {"token": validated_mpesa_access_token})
+
 
 def pay(request):
     if request.method == "POST":
+        # Retrieve form data
         phone = request.POST['phone']
         amount = request.POST['amount']
+
+        # Access token and request parameters
         access_token = MpesaAccessToken.validated_mpesa_access_token
         api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
         headers = {"Authorization": "Bearer %s" % access_token}
+
         request_data = {
             "BusinessShortCode": LipanaMpesaPpassword.Business_short_code,
             "Password": LipanaMpesaPpassword.decode_password,
@@ -634,17 +649,22 @@ def pay(request):
             "PartyB": LipanaMpesaPpassword.Business_short_code,
             "PhoneNumber": phone,
             "CallBackURL": "https://sandbox.safaricom.co.ke/mpesa/",
-            "AccountReference": "TravelKE",
-            "TransactionDesc": "Transport charges"
+            "AccountReference": "Erick were",
+            "TransactionDesc": "Web Development Charges"
         }
 
-        # Move the request.post inside the POST block
+        # Make the API request
         response = requests.post(api_url, json=request_data, headers=headers)
 
+        # Return response based on API status
         if response.status_code == 200:
             return HttpResponse("Payment successful")
         else:
-            return HttpResponse("Payment failed", status=400)
+            return HttpResponse(f"Payment failed: {response.text}", status=400)
 
-    # If it's a GET request, just render the page or return an appropriate response.
+    # Handle GET requests by rendering the pay.html template
+    return render(request, 'pay.html', {'navbar': 'stk'})
+
+
+def stk(request):
     return render(request, 'pay.html', {'navbar': 'stk'})
