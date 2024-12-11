@@ -1,6 +1,4 @@
-from email import message
-from unicodedata import category
-from django.shortcuts import render, redirect
+
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from transportMGTs.settings import MEDIA_ROOT, MEDIA_URL
@@ -8,6 +6,7 @@ import json
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+from django.http import JsonResponse
 from travelApp.forms import UserRegistration, UpdateProfile, UpdatePasswords, SaveCategory, SaveLocation, SaveBus, \
     SaveSchedule, SaveBooking, PayBooked
 from travelApp.models import Booking, Category, Location, Bus, Schedule
@@ -17,6 +16,11 @@ import base64
 from datetime import datetime
 from django.db.models import Q
 
+import requests
+from requests.auth import HTTPBasicAuth
+from . credentials import MpesaAccessToken, LipanaMpesaPpassword
+from django.shortcuts import render, redirect
+from django.contrib import messages
 context = {
     'page_title': 'File Management System',
 }
@@ -441,34 +445,64 @@ def manage_booking(request, schedPK=None, pk=None):
     return render(request, 'manage_book.html', context)
 
 
+# def save_booking(request):
+#     resp = {'status': 'failed', 'msg': ''}
+#     if request.method == 'POST':
+#         if (request.POST['id']).isnumeric():
+#             booking = Booking.objects.get(pk=request.POST['id'])
+#         else:
+#             booking = None
+#         if booking is None:
+#             form = SaveBooking(request.POST)
+#         else:
+#             form = SaveBooking(request.POST, instance=booking)
+#         if form.is_valid():
+#             form.save()
+#             if booking is None:
+#                 booking = Booking.objects.last()
+#                 messages.success(request,
+#                                  f'Booking has been saved successfully. Your Booking Refderence Code is: <b>{booking.code}</b>',
+#                                  extra_tags='stay')
+#             else:
+#                 messages.success(request, f'<b>{booking.code}</b> Booking has been updated successfully.')
+#             resp['status'] = 'success'
+#         else:
+#             for fields in form:
+#                 for error in fields.errors:
+#                     resp['msg'] += str(error + "<br>")
+#     else:
+#         resp['msg'] = 'No data has been sent.'
+#     return HttpResponse(json.dumps(resp), content_type='application/json')
+
 def save_booking(request):
-    resp = {'status': 'failed', 'msg': ''}
+    resp = {'status':'failed', 'msg':''}
     if request.method == 'POST':
-        if (request.POST['id']).isnumeric():
-            booking = Booking.objects.get(pk=request.POST['id'])
-        else:
-            booking = None
-        if booking is None:
+        try:
             form = SaveBooking(request.POST)
-        else:
-            form = SaveBooking(request.POST, instance=booking)
-        if form.is_valid():
-            form.save()
-            if booking is None:
-                booking = Booking.objects.last()
-                messages.success(request,
-                                 f'Booking has been saved successfully. Your Booking Refderence Code is: <b>{booking.code}</b>',
-                                 extra_tags='stay')
+            if form.is_valid():
+                booking = form.save()
+                resp['status'] = 'success'
+                resp['booking_id'] = booking.id
             else:
-                messages.success(request, f'<b>{booking.code}</b> Booking has been updated successfully.')
-            resp['status'] = 'success'
-        else:
-            for fields in form:
-                for error in fields.errors:
-                    resp['msg'] += str(error + "<br>")
-    else:
-        resp['msg'] = 'No data has been sent.'
-    return HttpResponse(json.dumps(resp), content_type='application/json')
+                resp['msg'] = form.errors
+        except Exception as e:
+            resp['msg'] = str(e)
+    return JsonResponse(resp)
+
+#
+# def pay_booked(request):
+#     booking_id = request.GET.get('booking_id')
+#     try:
+#         booking = Booking.objects.get(id=booking_id)
+#         context = {
+#             'booking': booking,
+#             'total_payable': booking.total_payable()
+#         }
+#         return render(request, 'pay_booked.html', context)
+#     except Booking.DoesNotExist:
+#         messages.error(request, "Invalid booking")
+#         return redirect('home-page')
+
 
 
 def bookings(request):
@@ -490,24 +524,25 @@ def view_booking(request, pk=None):
         return render(request, 'view_booked.html', context)
 
 
-@login_required
-def pay_booked(request):
-    resp = {'status': 'failed', 'msg': ''}
-    if not request.method == 'POST':
-        resp['msg'] = "Unknown Booked ID"
-    else:
-        booking = Booking.objects.get(id=request.POST['id'])
-        form = PayBooked(request.POST, instance=booking)
-        if form.is_valid():
-            form.save()
-            messages.success(request, f"<b>{booking.code}</b> has been paid successfully", extra_tags='stay')
-            resp['status'] = 'success'
-        else:
-            for field in form:
-                for error in field.errors:
-                    resp['msg'] += str(error + "<br>")
+# @login_required
+# def pay_booked(request):
+#     resp = {'status': 'failed', 'msg': ''}
+#     if not request.method == 'POST':
+#         resp['msg'] = "Unknown Booked ID"
+#     else:
+#         booking = Booking.objects.get(id=request.POST['id'])
+#         form = PayBooked(request.POST, instance=booking)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, f"<b>{booking.code}</b> has been paid successfully", extra_tags='stay')
+#             resp['status'] = 'success'
+#         else:
+#             for field in form:
+#                 for error in field.errors:
+#                     resp['msg'] += str(error + "<br>")
+#
+#     return HttpResponse(json.dumps(resp), content_type='application/json')
 
-    return HttpResponse(json.dumps(resp), content_type='application/json')
 
 
 @login_required
@@ -537,3 +572,79 @@ def find_trip(request):
     today = datetime.today().strftime("%Y-%m-%d")
     context['today'] = today
     return render(request, 'find_trip.html', context)
+
+
+# M-PESA integration
+
+def token(request):
+    consumer_key = 'cqivoO91hSHBq2qZz4SBvfFbWOY2EeqJtoA47mZjh3gXKW6M'
+    consumer_secret = 'pZ7cVI3j0VMcSXqvbzapJvlEMpJmi6cB1T84wN0lDF18rIy38qCd8JqvNmdFab9Q'
+    api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
+
+    r = requests.get(api_URL, auth=HTTPBasicAuth(
+        consumer_key, consumer_secret))
+    mpesa_access_token = json.loads(r.text)
+    validated_mpesa_access_token = mpesa_access_token["access_token"]
+
+    return render(request, 'token.html', {"token":validated_mpesa_access_token})
+
+
+# def pay(request):
+#     if request.method =="POST":
+#         phone = request.POST['phone']
+#         amount = request.POST['amount']
+#         access_token = MpesaAccessToken.validated_mpesa_access_token
+#         api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
+#         headers = {"Authorization": "Bearer %s" % access_token}
+#         request = {
+#             "BusinessShortCode": LipanaMpesaPpassword.Business_short_code,
+#             "Password": LipanaMpesaPpassword.decode_password,
+#             "Timestamp": LipanaMpesaPpassword.lipa_time,
+#             "TransactionType": "CustomerPayBillOnline",
+#             "Amount": amount,
+#             "PartyA": phone,
+#             "PartyB": LipanaMpesaPpassword.Business_short_code,
+#             "PhoneNumber": phone,
+#             "CallBackURL": "https://sandbox.safaricom.co.ke/mpesa/",
+#             "AccountReference": "TravelKE",
+#             "TransactionDesc": "Transport charges"
+#         }
+#
+#     response = requests.post(api_url, json=request, headers=headers)
+#     return HttpResponse("success")
+#
+# def stk(request):
+#     return render(request, 'pay.html', {'navbar': 'stk'})
+
+
+def pay(request):
+    if request.method == "POST":
+        phone = request.POST['phone']
+        amount = request.POST['amount']
+        access_token = MpesaAccessToken.validated_mpesa_access_token
+        api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
+        headers = {"Authorization": "Bearer %s" % access_token}
+        request_data = {
+            "BusinessShortCode": LipanaMpesaPpassword.Business_short_code,
+            "Password": LipanaMpesaPpassword.decode_password,
+            "Timestamp": LipanaMpesaPpassword.lipa_time,
+            "TransactionType": "CustomerPayBillOnline",
+            "Amount": amount,
+            "PartyA": phone,
+            "PartyB": LipanaMpesaPpassword.Business_short_code,
+            "PhoneNumber": phone,
+            "CallBackURL": "https://sandbox.safaricom.co.ke/mpesa/",
+            "AccountReference": "TravelKE",
+            "TransactionDesc": "Transport charges"
+        }
+
+        # Move the request.post inside the POST block
+        response = requests.post(api_url, json=request_data, headers=headers)
+
+        if response.status_code == 200:
+            return HttpResponse("Payment successful")
+        else:
+            return HttpResponse("Payment failed", status=400)
+
+    # If it's a GET request, just render the page or return an appropriate response.
+    return render(request, 'pay.html', {'navbar': 'stk'})

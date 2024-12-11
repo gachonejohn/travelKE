@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-91%-s$h0kmi73-u0rvjgtqy-q6yooq#7b_8(*b!3z1%j^7g)u_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -39,7 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'travelApp.apps.TravelappConfig',
+    'crispy_forms',
+    'crispy_bootstrap4',
+    'django_daraja',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -87,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'travelApp_db',
         'USER':'root',
-        'PASSWORD':'',
+        'PASSWORD':'Forex#254',
         'HOST':'localhost',
         'PORT':'3306'
     }
