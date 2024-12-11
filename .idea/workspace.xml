@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="08f345ac-3160-409b-8c4a-32fe208bed43" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/transportMGTs/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/transportMGTs/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transportMGTs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/transportMGTs/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/bookings.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/bookings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/bus_mgt.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/bus_mgt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/category_mgt.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/category_mgt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/find_trip.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/find_trip.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/location_mgt.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/location_mgt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_bus.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_bus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_location.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_location.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_schedule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/pay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/product_mgt.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/product_mgt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/schedule_mgt.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/schedule_mgt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/scheduled_trips.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/scheduled_trips.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/topNavigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/topNavigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/update_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/update_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/templates/view_booked.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/view_booked.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travelApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2pthFKLX7KXxEWBCqWf3qpWOfZV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/OneDrive/Desktop/eMobilis class java/MpesaIntegration&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\transportMGTs\travelApp\templates" />
+      <recent name="C:\Users\user\Desktop\transportMGTs\travelApp" />
+      <recent name="C:\Users\user\Desktop\transportMGTs\travelApp\static\images" />
+      <recent name="C:\Users\user\Desktop\transportMGTs" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="transportMGTs" type="Python.DjangoServer" factoryName="Django server">
+      <module name="transportMGTs" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
+        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="08f345ac-3160-409b-8c4a-32fe208bed43" name="Changes" comment="" />
+      <created>1733591178669</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733591178669</updated>
+      <workItem from="1733591179894" duration="8053000" />
+      <workItem from="1733631514144" duration="7838000" />
+      <workItem from="1733643679749" duration="11125000" />
+      <workItem from="1733673293766" duration="17402000" />
+      <workItem from="1733733902806" duration="2037000" />
+      <workItem from="1733757058967" duration="15870000" />
+      <workItem from="1733862706024" duration="13488000" />
+      <workItem from="1733898567110" duration="14206000" />
+      <workItem from="1733946031196" duration="8652000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/travelApp/views.py</url>
+          <line>300</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
