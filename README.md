@@ -1,6 +1,14 @@
 #  Welcome to travelKE
 
-# Transport management system 
+# Transport management system
+
+# Tech
+- Django
+- Python
+- HTML
+- JavaScript 
+- CSS
+- SQL
 
 # A system that allows passengers to; 
 - search for available/scheduled trips

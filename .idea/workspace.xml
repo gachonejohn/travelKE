@@ -5,32 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08f345ac-3160-409b-8c4a-32fe208bed43" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/transportMGTs/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/transportMGTs/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transportMGTs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/transportMGTs/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/bookings.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/bookings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/bus_mgt.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/bus_mgt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/category_mgt.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/category_mgt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/find_trip.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/find_trip.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/location_mgt.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/location_mgt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_bus.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_bus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_location.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_location.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/manage_schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/manage_schedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/pay.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/product_mgt.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/product_mgt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/schedule_mgt.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/schedule_mgt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/scheduled_trips.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/scheduled_trips.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/topNavigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/topNavigation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/update_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/update_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/templates/view_booked.html" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/templates/view_booked.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +109,8 @@
       <workItem from="1733757058967" duration="15870000" />
       <workItem from="1733862706024" duration="13488000" />
       <workItem from="1733898567110" duration="14206000" />
-      <workItem from="1733946031196" duration="8652000" />
+      <workItem from="1733946031196" duration="11325000" />
+      <workItem from="1735203644671" duration="2314000" />
     </task>
     <servers />
   </component>
