@@ -589,32 +589,6 @@ def find_trip(request):
 #     return render(request, 'token.html', {"token":validated_mpesa_access_token})
 #
 
-# def pay(request):
-#     if request.method =="POST":
-#         phone = request.POST['phone']
-#         amount = request.POST['amount']
-#         access_token = MpesaAccessToken.validated_mpesa_access_token
-#         api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
-#         headers = {"Authorization": "Bearer %s" % access_token}
-#         request = {
-#             "BusinessShortCode": LipanaMpesaPpassword.Business_short_code,
-#             "Password": LipanaMpesaPpassword.decode_password,
-#             "Timestamp": LipanaMpesaPpassword.lipa_time,
-#             "TransactionType": "CustomerPayBillOnline",
-#             "Amount": amount,
-#             "PartyA": phone,
-#             "PartyB": LipanaMpesaPpassword.Business_short_code,
-#             "PhoneNumber": phone,
-#             "CallBackURL": "https://sandbox.safaricom.co.ke/mpesa/",
-#             "AccountReference": "TravelKE",
-#             "TransactionDesc": "Transport charges"
-#         }
-#
-#     response = requests.post(api_url, json=request, headers=headers)
-#     return HttpResponse("success")
-#
-# def stk(request):
-#     return render(request, 'pay.html', {'navbar': 'stk'})
 
 def token(request):
     consumer_key = 'cqivoO91hSHBq2qZz4SBvfFbWOY2EeqJtoA47mZjh3gXKW6M'
@@ -649,8 +623,8 @@ def pay(request):
             "PartyB": LipanaMpesaPpassword.Business_short_code,
             "PhoneNumber": phone,
             "CallBackURL": "https://sandbox.safaricom.co.ke/mpesa/",
-            "AccountReference": "Erick were",
-            "TransactionDesc": "Web Development Charges"
+            "AccountReference": "TravelKE",
+            "TransactionDesc": "Booked trip"
         }
 
         # Make the API request
