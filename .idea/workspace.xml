@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="08f345ac-3160-409b-8c4a-32fe208bed43" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travelApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/travelApp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,7 @@
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/user/OneDrive/Desktop/eMobilis class java/MpesaIntegration",
+    "last_opened_file_path": "C:/Users/user/OneDrive/Desktop/ISASE DIGITAL LTD/ISASEDIGITAL",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -112,7 +111,10 @@
       <workItem from="1733898567110" duration="14206000" />
       <workItem from="1733946031196" duration="11325000" />
       <workItem from="1735203644671" duration="2749000" />
-      <workItem from="1735392592564" duration="1926000" />
+      <workItem from="1735392592564" duration="2959000" />
+      <workItem from="1736363479663" duration="1861000" />
+      <workItem from="1737453711719" duration="1102000" />
+      <workItem from="1737658232560" duration="363000" />
     </task>
     <servers />
   </component>
